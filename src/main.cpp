@@ -1,8 +1,8 @@
 // OTUS C++ Basic course homework skeleton.
 // Lexer using example
-//импортирование_библиотек
+//импортирование_библиотеки
 #include <iostream>
-//импортирование_
+//импортирование_заголовочных_файлов
 #include "astnode.hpp"
 #include "lexer.hpp"
 #include "parser.hpp"
@@ -18,17 +18,12 @@ int main() {
     // Variable
 
     // Without implementation that classes this application works only with numbers
-    //
     Lexer lexer(std::cin);
-    //
     Parser parser(lexer);
-    //
     ASTNode *ast = parser.parse();
-    //
+    //печать_результата
     if (ast) {
-        //
          ast->print(std::cout);
     }
-    //
     return 0;
 }

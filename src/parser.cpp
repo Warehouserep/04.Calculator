@@ -1,4 +1,4 @@
-//импортирование_бибилиотек
+//импортирование_заголовочного_файла_(.hpp - расширение_характерное_для_c++)
 #include "parser.hpp"
 #include "number.hpp"
 
@@ -12,13 +12,14 @@ void Parser::next_token() { tok_ = lexer_.next_token(); }
 ASTNode *Parser::expr() {
     // parse addition and subsctruction
     ASTNode *root = term();
-    //
+    //создание_цикла_перебора_case'ов
     for (;;) {
-        //
+        //подключение_свича_с_case-метками_(значение_tok_дожно_быть_целочисленным)
         switch (tok_) {
-        //
+        //определение_первой_метки_в_качестве_класса_с_перечислением
         case Token::Operator: {
-            //
+            //в_качестве_работы_метки_возвращает_строковую_переменную
+            //принимающую_значение_
             std::string op = lexer_.get_operator();
             //
             switch (op.front()) {
