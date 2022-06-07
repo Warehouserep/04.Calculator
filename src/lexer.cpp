@@ -3,7 +3,7 @@
 // импортирование_заголовочного_файла_lexer(расширение_hpp_для_c++)_и_библиотеки_ссtype
 #include "lexer.hpp"
 #include <cctype>
-//
+
 Lexer::Token Lexer::next_token() {
     for (;;) {
         switch (state_) {

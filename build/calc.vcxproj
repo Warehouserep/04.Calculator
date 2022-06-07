@@ -334,6 +334,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Add.hpp" />
+    <ClInclude Include="..\include\Div.hpp" />
+    <ClInclude Include="..\include\Mul.hpp" />
+    <ClInclude Include="..\include\Sub.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

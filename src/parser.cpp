@@ -1,6 +1,10 @@
 //импортирование_заголовочного_файла_(.hpp - расширение_характерное_для_c++)
 #include "parser.hpp"
 #include "number.hpp"
+#include "Mul.hpp"
+#include "Add.hpp"
+#include "Sub.hpp"
+#include "Div.hpp"
 
 using Token = Lexer::Token;
 ASTNode *Parser::parse() { return expr(); }
@@ -16,14 +20,12 @@ ASTNode *Parser::expr() {
             switch (op.front()) {
             case '+':
                 class Add:public ASTNode {
-                    //left += term();
-                    //root = new Add(root, term());
+                    // root = new Add(root, term());
                 };                
                 return nullptr;
                 break;
             case '-':
                 class Sub:public ASTNode {
-                    // left -= term();
                     // root = new Sub(root, term());
                 };
                 return nullptr;
@@ -48,16 +50,12 @@ ASTNode *Parser::term() {
             switch (op.front()) {
             case '*':
                 class Mul : public ASTNode {
-                    // left *= prim();
                     // root = new Mul(root, prim());
                 };
                 return nullptr;
                 break;
             case '/':
                 class Div : public ASTNode {
-                    // double d = prim();
-                    // if (d == 0) return error("Divide by zero");
-                    // left /= d;
                     // root = new Div(root, prim());
                 };
                 return nullptr;
