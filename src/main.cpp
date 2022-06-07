@@ -11,14 +11,22 @@
 int main() {
     // TODO
     // Implement the next classes:
-    // Add
-    // Sub
-    // Mul
-    // Div
-    // Variable
-
+    enum token_value {
+        //Add
+        PLUS = '+',
+        //Sub
+        MINUS = '-',
+        //Mul
+        MUL = '*',
+        //Div
+        Div = '/'
+    };
+    token_value curr_tok;
+    
     // Without implementation that classes this application works only with numbers
+    // лексический_анализатор
     Lexer lexer(std::cin);
+    // синтаксический_анализатор
     Parser parser(lexer);
     ASTNode *ast = parser.parse();
     //печать_результата
