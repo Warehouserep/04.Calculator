@@ -22,6 +22,46 @@ int main() {
         Div = '/'
     };
     token_value curr_tok;
+
+    //функция_сложения_вычитания
+    double expr(){
+        for (;;) {
+            switch (curr_tok) {
+                case: PLUS:
+                    //get_token();
+                    left += term();
+                    break;
+                case: MINUS:
+                    //get_token();
+                    left -= term();
+                    break;
+                default:
+                    return left;
+            }
+        }
+    }
+
+    //функция_умножения_и_деления
+    double term() {
+        for (;;) {
+            switch (curr_tok)
+            {
+                case: MUL:
+                    //get_token();
+                    left *= prim();
+                    break;
+                case: DIV:
+                    //get_token();
+                    double d = prim();
+                    if (d == 0) return error("Divide by zero");
+                    left /= d;
+                    break;
+                default: 
+                    return left;
+            }
+        }
+    }
+
     
     // Without implementation that classes this application works only with numbers
     // лексический_анализатор
