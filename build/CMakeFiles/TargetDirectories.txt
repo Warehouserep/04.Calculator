@@ -1,0 +1,3 @@
+C:/Users/WorkMashine/Desktop/OTUS/Занятие_8/04.Calculator/build/CMakeFiles/calc.dir
+C:/Users/WorkMashine/Desktop/OTUS/Занятие_8/04.Calculator/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/WorkMashine/Desktop/OTUS/Занятие_8/04.Calculator/build/CMakeFiles/ZERO_CHECK.dir
