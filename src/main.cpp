@@ -10,9 +10,12 @@ int main() {
         PLUS = '+',
         MINUS = '-',
         MUL = '*',
-        Div = '/'
+        DIV = '/',
+        NUMBER
     };
     token_value curr_tok;
+
+
   
     Lexer lexer(std::cin);
     Parser parser(lexer);
