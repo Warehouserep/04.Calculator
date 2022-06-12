@@ -6,11 +6,5 @@
 
 class Div : public ASTNode {
 public:
-    Div(int val) : ASTNode(std::to_string(val)), val_(val) {}
-    int value() { 
-        val_ /= val_;
-        return val_; }
-
-private:
-    int val_;
+	Div(ASTNode* lhs, ASTNode* rhs) : ASTNode("/", lhs, rhs) {}
 };

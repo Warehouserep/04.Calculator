@@ -7,11 +7,6 @@ add_executable(calc
     src/parser.cpp
     src/astnode.cpp
     src/main.cpp
-
-    src/Add.hpp
-    src/Div.hpp
-    src/Sub.hpp
-    src/Mul.hpp
 )
 
 target_include_directories(calc PRIVATE include)

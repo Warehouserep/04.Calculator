@@ -1,6 +1,7 @@
 //импортирование_заголовочного_файла_(.hpp - расширение_характерное_для_c++)
 #include "parser.hpp"
 #include "number.hpp"
+
 #include "Mul.hpp"
 #include "Add.hpp"
 #include "Sub.hpp"
@@ -19,16 +20,10 @@ ASTNode *Parser::expr() {
             std::string op = lexer_.get_operator();
             switch (op.front()) {
             case '+':
-                class Add:public ASTNode {
-                    // root = new Add(root, term());
-                };                
-                return nullptr;
+                root = new Add(root, term());             
                 break;
             case '-':
-                class Sub:public ASTNode {
-                    // root = new Sub(root, term());
-                };
-                return nullptr;
+                root = new Sub(root, term());
                 break;
             default:
                 return root;
@@ -49,16 +44,10 @@ ASTNode *Parser::term() {
             std::string op = lexer_.get_operator();
             switch (op.front()) {
             case '*':
-                class Mul : public ASTNode {
-                    // root = new Mul(root, prim());
-                };
-                return nullptr;
+                root = new Mul(root, prim());
                 break;
             case '/':
-                class Div : public ASTNode {
-                    // root = new Div(root, prim());
-                };
-                return nullptr;
+                root = new Div(root, prim());
                 break;
             default:
                 return root;
@@ -78,12 +67,9 @@ ASTNode *Parser::prim() {
     case Token::Number:
         node = new Number(lexer_.get_number());
         break;
-    case Token::Name:
-        class Variable : public ASTNode {
-            // node = new Variable(lexer_.get_name());
-        };
-        return nullptr;
-        break;
+    //case Token::Name:
+    //    node = new Variable(lexer_.get_name());
+    //    break;
     default:
         break;
     }
